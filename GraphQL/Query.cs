@@ -3,6 +3,7 @@ using ChatboxDemo.Data;
 using ChatboxDemo.Models;
 using HotChocolate;
 using HotChocolate.Data;
+using HotChocolate.Types;
 
 namespace ChatboxDemo.GraphQL
 {
@@ -10,6 +11,7 @@ namespace ChatboxDemo.GraphQL
   public class Query
   {
     [UseDbContext(typeof(ChatboxDbContext))]
+    [UsePaging]
     [UseFiltering]
     [UseSorting]
     [GraphQLDescription("Gets queryable messages.")]
